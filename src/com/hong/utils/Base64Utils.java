@@ -16,9 +16,9 @@ import java.util.Base64.Encoder;
  */
 public class Base64Utils {
 	/**
-	 * @Description: 将base64编码字符串转换为图片
-	 * @Author: 3hhws
-	 * @CreateTime: 2018-05-29
+	 * @Description 将base64编码字符串转换为图片
+	 * @author 3hhws
+	 * @CreateTime 2018-05-29
 	 * @param imgStr base64编码字符串
 	 * @param path 图片路径-具体到文件
 	 * @return 图片
