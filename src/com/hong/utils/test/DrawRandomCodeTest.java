@@ -1,11 +1,11 @@
 package com.hong.utils.test;
 
 import static org.junit.Assert.assertTrue;
-
 import java.awt.Color;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ class DrawRandomCodeTest {
 	static char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
             '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 	@Test
-	@DisplayName("²âÊÔÑéÖ¤ÂëÍ¼Æ¬Éú³É")
+	@DisplayName("æµ‹è¯•éªŒè¯ç å›¾ç‰‡ç”Ÿæˆ")
 	@RepeatedTest(5)
 	void testGenerateRandomCode() throws UnsupportedEncodingException {
 		int width = 300;
@@ -30,7 +30,7 @@ class DrawRandomCodeTest {
 		int fontSize = 50;
 		DrawRandomCode.generateRandomCode(width, height, codeLength, 
 				filePath, backgroundColor, fontColor, fontSize);
-		assertTrue("Éú³É³É¹¦", new File(filePath).length()>0);
+		assertTrue("ç”ŸæˆæˆåŠŸ",new File(filePath).length()>0);
 		try {
 			String s = MD5Utils.MD5To32Char("12345");
 			System.out.println(s);

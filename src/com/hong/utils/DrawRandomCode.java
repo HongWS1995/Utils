@@ -16,47 +16,47 @@ import javax.imageio.stream.FileImageOutputStream;
  * 
  * @author 3hhws
  * @since 2018.06.05
- * @description Éú³Éº¬Ëæ»úÊıµÄÍ¼Æ¬
+ * @description ç”Ÿæˆå«éšæœºæ•°çš„å›¾ç‰‡
  */
 public class DrawRandomCode {
 
 	/**
 	 * @param width
-	 *            Éú³ÉµÄÍ¼Æ¬¿í¶È
+	 *            ç”Ÿæˆçš„å›¾ç‰‡å®½åº¦
 	 * @param height
-	 *            Éú³ÉµÄÍ¼Æ¬³¤¶È
+	 *            ç”Ÿæˆçš„å›¾ç‰‡é•¿åº¦
 	 * @param codeLength
-	 *            Éú³ÉµÄËæ»úÂë³¤¶È
+	 *            ç”Ÿæˆçš„éšæœºç é•¿åº¦
 	 * @param filePath
-	 *            Éú³ÉµÄÍ¼Æ¬´æ·ÅÂ·¾¶
+	 *            ç”Ÿæˆçš„å›¾ç‰‡å­˜æ”¾è·¯å¾„
 	 * @param backgroundColor
-	 *            Í¼Æ¬±³¾°
+	 *            å›¾ç‰‡èƒŒæ™¯
 	 * @param fontColor
-	 *            Ëæ»úÂëÑÕÉ«
+	 *            éšæœºç é¢œè‰²
 	 * @param fontSize
-	 *            Ëæ»úÂë×ÖÌå´óĞ¡
+	 *            éšæœºç å­—ä½“å¤§å°
 	 */
 	public static void generateRandomCode(int width, int height, int codeLength, String filePath, Color backgroundColor,
 			Color fontColor, int fontSize) {
 		BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
-		// Graphics2D ¶ÔÏó µÄ´´½¨ÓÉÆäËû×é¼ş»òÕßBufferedImage´´½¨
+		// Graphics2D å¯¹è±¡ çš„åˆ›å»ºç”±å…¶ä»–ç»„ä»¶æˆ–è€…BufferedImageåˆ›å»º
 		Graphics2D graphics2d = bi.createGraphics();
 		graphics2d.setBackground(backgroundColor);
-		// Í¨¹ıÉèÖÃµÄ±³¾°ÑÕÉ«Çå³ı¾ØĞÎÇøÓòÔ­ÓĞµÄÏñËØ
+		// é€šè¿‡è®¾ç½®çš„èƒŒæ™¯é¢œè‰²æ¸…é™¤çŸ©å½¢åŒºåŸŸåŸæœ‰çš„åƒç´ 
 		graphics2d.clearRect(0, 0, width, height);
 		graphics2d.setColor(fontColor);
 		graphics2d.setFont(new Font(Font.DIALOG, Font.ITALIC, fontSize));
-		// ¿¹¾â³İ
+		// æŠ—é”¯é½¿
 		graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		Random r = new Random(System.currentTimeMillis());
-		// Ëæ»úÂë´æ´¢ÔÚsb¶ÔÏó
+		// éšæœºç å­˜å‚¨åœ¨sbå¯¹è±¡
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < codeLength; i++) {
 			int rnum = r.nextInt(26) + 65;
 			sb.append((char) rnum);
 			
 		}
-		System.out.println("Éú³ÉµÄÑéÖ¤Âë£º"+sb.toString());
+		System.out.println("ç”Ÿæˆçš„éªŒè¯ç ï¼š"+sb.toString());
 		graphics2d.drawString(String.valueOf(sb), 10, height / 2);
 		FileImageOutputStream os = null;
 		try {

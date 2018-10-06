@@ -2,7 +2,7 @@ package com.hong.utils.test;
 
 import com.hong.utils.Base64Utils;
 
-//图片转码Base64测试
+//????Base64??
 public class TestBase64 {
 
 	public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class TestBase64 {
 		String base64Str= Base64Utils.getImageStr(readPath);
 		System.out.println(base64Str);
 		Base64Utils.generateImage(base64Str, writePath);
-		System.out.println("转换成功");
+		System.out.println("杞崲鎴愬姛");
 	}
 
 }

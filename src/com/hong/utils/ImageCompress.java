@@ -26,30 +26,30 @@ public class ImageCompress {
 	}
 	
 	/**
-	 * Ö¸¶¨´óĞ¡½øĞĞËõ·Å
+	 * æŒ‡å®šå¤§å°è¿›è¡Œç¼©æ”¾
 	 * 
 	 * @throws IOException
 	 */
 	private void test1() throws IOException {
 		/*
-		 * size(width,height) ÈôÍ¼Æ¬ºá±È200Ğ¡£¬¸ß±È300Ğ¡£¬²»±ä
-		 * ÈôÍ¼Æ¬ºá±È200Ğ¡£¬¸ß±È300´ó£¬¸ßËõĞ¡µ½300£¬Í¼Æ¬±ÈÀı²»±ä ÈôÍ¼Æ¬ºá±È200´ó£¬¸ß±È300Ğ¡£¬ºáËõĞ¡µ½200£¬Í¼Æ¬±ÈÀı²»±ä
-		 * ÈôÍ¼Æ¬ºá±È200´ó£¬¸ß±È300´ó£¬Í¼Æ¬°´±ÈÀıËõĞ¡£¬ºáÎª200»ò¸ßÎª300
+		 * size(width,height) è‹¥å›¾ç‰‡æ¨ªæ¯”200å°ï¼Œé«˜æ¯”300å°ï¼Œä¸å˜
+		 * è‹¥å›¾ç‰‡æ¨ªæ¯”200å°ï¼Œé«˜æ¯”300å¤§ï¼Œé«˜ç¼©å°åˆ°300ï¼Œå›¾ç‰‡æ¯”ä¾‹ä¸å˜ è‹¥å›¾ç‰‡æ¨ªæ¯”200å¤§ï¼Œé«˜æ¯”300å°ï¼Œæ¨ªç¼©å°åˆ°200ï¼Œå›¾ç‰‡æ¯”ä¾‹ä¸å˜
+		 * è‹¥å›¾ç‰‡æ¨ªæ¯”200å¤§ï¼Œé«˜æ¯”300å¤§ï¼Œå›¾ç‰‡æŒ‰æ¯”ä¾‹ç¼©å°ï¼Œæ¨ªä¸º200æˆ–é«˜ä¸º300
 		 */
-		Thumbnails.of("C:/Users/3hhws/Desktop/Jellyfish_¿´Í¼Íõ.bmp").size(200, 300).toFile(
+		Thumbnails.of("C:/Users/3hhws/Desktop/Jellyfish_çœ‹å›¾ç‹.bmp").size(200, 300).toFile(
 				"C:/Users/3hhws/Desktop/image_200x300.jpg");
-		Thumbnails.of("C:/Users/3hhws/Desktop/Jellyfish_¿´Í¼Íõ.bmp").size(2560, 2048).toFile(
+		Thumbnails.of("C:/Users/3hhws/Desktop/Jellyfish_çœ‹å›¾ç‹.bmp").size(2560, 2048).toFile(
 				"C:/Users/3hhws/Desktop/image_2560x2048.jpg");
 	}
 
 	/**
-	 * °´ÕÕ±ÈÀı½øĞĞËõ·Å
+	 * æŒ‰ç…§æ¯”ä¾‹è¿›è¡Œç¼©æ”¾
 	 * 
 	 * @throws IOException
 	 */
 	private void test2() throws IOException {
 		/**
-		 * scale(±ÈÀı)
+		 * scale(æ¯”ä¾‹)
 		 */
 		Thumbnails.of("F:\\Tool\\eclipse-juno-win32\\workspace\\webjky\\webjky\\sampleImage\\ZZ010302WT20180000000000329097\\imagePosition3_temp.bmp").scale(0.5f).outputFormat("jpg")
 					.toFile("C:/Users/3hhws/Desktop/image_25%");
@@ -58,41 +58,41 @@ public class ImageCompress {
 	}
 
 	/**
-	 * ²»°´ÕÕ±ÈÀı£¬Ö¸¶¨´óĞ¡½øĞĞËõ·Å
+	 * ä¸æŒ‰ç…§æ¯”ä¾‹ï¼ŒæŒ‡å®šå¤§å°è¿›è¡Œç¼©æ”¾
 	 * 
 	 * @throws IOException
 	 */
 	private void test3() throws IOException {
 		/**
-		 * keepAspectRatio(false) Ä¬ÈÏÊÇ°´ÕÕ±ÈÀıËõ·ÅµÄ
+		 * keepAspectRatio(false) é»˜è®¤æ˜¯æŒ‰ç…§æ¯”ä¾‹ç¼©æ”¾çš„
 		 */
-		Thumbnails.of("C:/Users/3hhws/Desktop/ÁùÂ¥.jpg").size(120, 120).keepAspectRatio(false)
+		Thumbnails.of("C:/Users/3hhws/Desktop/å…­æ¥¼.jpg").size(120, 120).keepAspectRatio(false)
 				.toFile("C:/image_120x120.jpg");
 	}
 
 	/**
-	 * Ğı×ª
+	 * æ—‹è½¬
 	 * 
 	 * @throws IOException
 	 */
 	private void test4() throws IOException {
 		/**
-		 * rotate(½Ç¶È),ÕıÊı£ºË³Ê±Õë ¸ºÊı£ºÄæÊ±Õë
+		 * rotate(è§’åº¦),æ­£æ•°ï¼šé¡ºæ—¶é’ˆ è´Ÿæ•°ï¼šé€†æ—¶é’ˆ
 		 */
-		Thumbnails.of("C:/Users/3hhws/Desktop/ÁùÂ¥.jpg").size(1280, 1024).rotate(90).toFile(
+		Thumbnails.of("C:/Users/3hhws/Desktop/å…­æ¥¼.jpg").size(1280, 1024).rotate(90).toFile(
 				"C:/image+90.jpg");
-		Thumbnails.of("C:/Users/3hhws/Desktop/ÁùÂ¥.jpg").size(1280, 1024).rotate(-90).toFile(
+		Thumbnails.of("C:/Users/3hhws/Desktop/å…­æ¥¼.jpg").size(1280, 1024).rotate(-90).toFile(
 				"C:/iamge-90.jpg");
 	}
 
 	/**
-	 * Ë®Ó¡
+	 * æ°´å°
 	 * 
 	 * @throws IOException
 	 */
 	private void test5() throws IOException {
 		/**
-		 * watermark(Î»ÖÃ£¬Ë®Ó¡Í¼£¬Í¸Ã÷¶È)
+		 * watermark(ä½ç½®ï¼Œæ°´å°å›¾ï¼Œé€æ˜åº¦)
 		 */
 		Thumbnails.of("images/test.jpg").size(1280, 1024).watermark(
 				Positions.BOTTOM_RIGHT,
@@ -106,25 +106,25 @@ public class ImageCompress {
 	}
 
 	/**
-	 * ²Ã¼ô
+	 * è£å‰ª
 	 * 
 	 * @throws IOException
 	 */
 	private void test6() throws IOException {
 		/**
-		 * Í¼Æ¬ÖĞĞÄ400*400µÄÇøÓò
+		 * å›¾ç‰‡ä¸­å¿ƒ400*400çš„åŒºåŸŸ
 		 */
 		Thumbnails.of("images/test.jpg").sourceRegion(Positions.CENTER, 400,
 				400).size(200, 200).keepAspectRatio(false).toFile(
 				"C:/image_region_center.jpg");
 		/**
-		 * Í¼Æ¬ÓÒÏÂ400*400µÄÇøÓò
+		 * å›¾ç‰‡å³ä¸‹400*400çš„åŒºåŸŸ
 		 */
 		Thumbnails.of("images/test.jpg").sourceRegion(Positions.BOTTOM_RIGHT,
 				400, 400).size(200, 200).keepAspectRatio(false).toFile(
 				"C:/image_region_bootom_right.jpg");
 		/**
-		 * Ö¸¶¨×ø±ê
+		 * æŒ‡å®šåæ ‡
 		 */
 		Thumbnails.of("images/test.jpg").sourceRegion(600, 500, 400, 400).size(
 				200, 200).keepAspectRatio(false).toFile(
@@ -132,28 +132,28 @@ public class ImageCompress {
 	}
 
 	/**
-	 * ×ª»¯Í¼Ïñ¸ñÊ½
+	 * è½¬åŒ–å›¾åƒæ ¼å¼
 	 * 
 	 * @throws IOException
 	 */
 	private void test7() throws IOException {
 		/**
-		 * outputFormat(Í¼Ïñ¸ñÊ½)
+		 * outputFormat(å›¾åƒæ ¼å¼)
 		 */
-		Thumbnails.of("C:/Users/3hhws/Desktop/ÁùÂ¥.jpg").size(1280, 1024).outputFormat("jpg")
+		Thumbnails.of("C:/Users/3hhws/Desktop/å…­æ¥¼.jpg").size(1280, 1024).outputFormat("jpg")
 				.toFile("C:/Users/3hhws/Desktop/image_1280x1024.jpg");
-		Thumbnails.of("C:/Users/3hhws/Desktop/ÁùÂ¥.jpg").size(1280, 1024).outputFormat("jpg")
+		Thumbnails.of("C:/Users/3hhws/Desktop/å…­æ¥¼.jpg").size(1280, 1024).outputFormat("jpg")
 				.toFile("C:/Users/3hhws/Desktop/image_1280x1024.jpg");
 	}
 
 	/**
-	 * Êä³öµ½OutputStream
+	 * è¾“å‡ºåˆ°OutputStream
 	 * 
 	 * @throws IOException
 	 */
 	private void test8() throws IOException {
 		/**
-		 * toOutputStream(Á÷¶ÔÏó)
+		 * toOutputStream(æµå¯¹è±¡)
 		 */
 		OutputStream os = new FileOutputStream(
 				"C:/image_1280x1024_OutputStream.png");
@@ -161,13 +161,13 @@ public class ImageCompress {
 	}
 
 	/**
-	 * Êä³öµ½BufferedImage
+	 * è¾“å‡ºåˆ°BufferedImage
 	 * 
 	 * @throws IOException
 	 */
 	private void test9() throws IOException {
 		/**
-		 * asBufferedImage() ·µ»ØBufferedImage
+		 * asBufferedImage() è¿”å›BufferedImage
 		 */
 		BufferedImage thumbnail = Thumbnails.of("images/test.jpg").size(1280,
 				1024).asBufferedImage();

@@ -7,39 +7,39 @@ import java.security.NoSuchAlgorithmException;
  * @author 3hhws
  * @since 2018-06-07
  * @version 1.0
- * @description Éú³É32Î»»òÕß16Î»µÄMD5¼ÓÃÜµÄ×Ö·û´®
+ * @description ç”Ÿæˆ32ä½æˆ–è€…16ä½çš„MD5åŠ å¯†çš„å­—ç¬¦ä¸²
  * 
  */
 public class MD5Utils {
-	// ×Ö·ûÓ³Éä
+	// å­—ç¬¦æ˜ å°„
 	static char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-	// MD5×ª»»ºóµÄ×Ö½Ú×ª»»³É16½øÖÆµÄ×Ö·û´®£¨32¸ö×Ö·û£©
+	// MD5è½¬æ¢åçš„å­—èŠ‚è½¬æ¢æˆ16è¿›åˆ¶çš„å­—ç¬¦ä¸²ï¼ˆ32ä¸ªå­—ç¬¦ï¼‰
 	public static String MD5To32Char(String mds) throws NoSuchAlgorithmException {
 		MessageDigest md = MessageDigest.getInstance("md5");
 		byte[] md5 = md.digest(mds.getBytes());
 		String s;
-		// ÓÃ×Ö½Ú±íÊ¾¾ÍÊÇ 16 ¸ö×Ö½Ú
-		char str[] = new char[16 * 2]; // Ã¿¸ö×Ö½ÚÓÃ 16 ½øÖÆ±íÊ¾µÄ»°£¬Ê¹ÓÃÁ½¸ö×Ö·û£¬
-		// ËùÒÔ±íÊ¾³É 16 ½øÖÆĞèÒª 32 ¸ö×Ö·û
-		int k = 0; // ´æ´¢strÏÂ±êÖµ
+		// ç”¨å­—èŠ‚è¡¨ç¤ºå°±æ˜¯ 16 ä¸ªå­—èŠ‚
+		char str[] = new char[16 * 2]; // æ¯ä¸ªå­—èŠ‚ç”¨ 16 è¿›åˆ¶è¡¨ç¤ºçš„è¯ï¼Œä½¿ç”¨ä¸¤ä¸ªå­—ç¬¦ï¼Œ
+		// æ‰€ä»¥è¡¨ç¤ºæˆ 16 è¿›åˆ¶éœ€è¦ 32 ä¸ªå­—ç¬¦
+		int k = 0; // å­˜å‚¨strä¸‹æ ‡å€¼
 		for (int i = 0; i < 16; i++) {
-			// ×ª»»³É 16 ½øÖÆ×Ö·ûµÄ×ª»»
-			byte byte0 = md5[i]; // È¡µÚ i ¸ö×Ö½Ú
-			str[k++] = hexDigits[byte0 >>> 4 & 0xf]; // È¡×Ö½ÚÖĞ¸ß 4 Î»µÄÊı×Ö×ª»»,
-			// >>> ÎªÂß¼­ÓÒÒÆ£¬³ı·ûºÅÎ»ÍâÓÒÒÆËÄÎ»    10011010--->00001001
-			str[k++] = hexDigits[byte0 & 0xf]; // È¡×Ö½ÚÖĞµÍ 4 Î»µÄÊı×Ö×ª»»
+			// è½¬æ¢æˆ 16 è¿›åˆ¶å­—ç¬¦çš„è½¬æ¢
+			byte byte0 = md5[i]; // å–ç¬¬ i ä¸ªå­—èŠ‚
+			str[k++] = hexDigits[byte0 >>> 4 & 0xf]; // å–å­—èŠ‚ä¸­é«˜ 4 ä½çš„æ•°å­—è½¬æ¢,
+			// >>> ä¸ºé€»è¾‘å³ç§»ï¼Œé™¤ç¬¦å·ä½å¤–å³ç§»å››ä½    10011010--->00001001
+			str[k++] = hexDigits[byte0 & 0xf]; // å–å­—èŠ‚ä¸­ä½ 4 ä½çš„æ•°å­—è½¬æ¢
 		}
-		s = new String(str); // »»ºóµÄ½á¹û×ª»»Îª×Ö·û´®
+		s = new String(str); // æ¢åçš„ç»“æœè½¬æ¢ä¸ºå­—ç¬¦ä¸²
 		return s;
 	}
 
-	// MD5×ª»»ºóµÄ×Ö½Ú×ª»»³É16½øÖÆµÄ×Ö·û´®£¨16¸ö×Ö·û£©
+	// MD5è½¬æ¢åçš„å­—èŠ‚è½¬æ¢æˆ16è¿›åˆ¶çš„å­—ç¬¦ä¸²ï¼ˆ16ä¸ªå­—ç¬¦ï¼‰
 	public static String MD5To16Char(String mds) throws NoSuchAlgorithmException {
 		MessageDigest md = MessageDigest.getInstance("md5");
 		byte[] md5 = md.digest(mds.getBytes());
 		String s;
-		// ÓÃ×Ö½Ú±íÊ¾¾ÍÊÇ 8 ¸ö×Ö½Ú£¬½Ø¶ÏÇ°ºó4¸ö×Ö½Ú
+		// ç”¨å­—èŠ‚è¡¨ç¤ºå°±æ˜¯ 8 ä¸ªå­—èŠ‚ï¼Œæˆªæ–­å‰å4ä¸ªå­—èŠ‚
 		char str[] = new char[16];
 		int k = 0;
 		for (int i = 4; i < 12; i++) {

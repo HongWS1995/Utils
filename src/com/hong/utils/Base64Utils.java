@@ -12,26 +12,26 @@ import java.util.Base64.Encoder;
  * 
  * @author 3hhws
  * @version 1.0
- * @description Í¼Æ¬Base64×ªÂëÓë½âÂëµÄ¹¤¾ß°ü
+ * @description å›¾ç‰‡Base64è½¬ç ä¸è§£ç çš„å·¥å…·åŒ…
  */
 public class Base64Utils {
 	/**
-	 * @Description ½«base64±àÂë×Ö·û´®×ª»»ÎªÍ¼Æ¬
+	 * @Description å°†base64ç¼–ç å­—ç¬¦ä¸²è½¬æ¢ä¸ºå›¾ç‰‡
 	 * @author 3hhws
 	 * @CreateTime 2018-05-29
-	 * @param imgStr base64±àÂë×Ö·û´®
-	 * @param path Í¼Æ¬Â·¾¶-¾ßÌåµ½ÎÄ¼ş
-	 * @return Í¼Æ¬
+	 * @param imgStr base64ç¼–ç å­—ç¬¦ä¸²
+	 * @param path å›¾ç‰‡è·¯å¾„-å…·ä½“åˆ°æ–‡ä»¶
+	 * @return å›¾ç‰‡
 	*/
 	public static boolean generateImage(String imgStr, String path) {
 	if (imgStr == null)
 		return false;
 	Decoder decoder =Base64.getDecoder();
 	try {
-	// ½âÃÜ
+	// è§£å¯†
 	
 	byte[] b = decoder.decode(imgStr);
-	// ´¦ÀíÊı¾İ
+	// å¤„ç†æ•°æ®
 	for (int i = 0; i < b.length; ++i) {
 			if (b[i] < 0) {
 				b[i] += 256;
@@ -49,10 +49,10 @@ public class Base64Utils {
   }
 	
 	/**
-	 * @Description: ¸ù¾İÍ¼Æ¬µØÖ·×ª»»Îªbase64±àÂë×Ö·û´®
+	 * @Description: æ ¹æ®å›¾ç‰‡åœ°å€è½¬æ¢ä¸ºbase64ç¼–ç å­—ç¬¦ä¸²
 	 * @Author: 3hhws
 	 * @CreateTime: 2018-05-29
-	 * @return Base64×Ö·û´®
+	 * @return Base64å­—ç¬¦ä¸²
 	 */
 	public static String getImageStr(String imgPath) {
 	    InputStream inputStream = null;
@@ -65,7 +65,7 @@ public class Base64Utils {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-	    // ¼ÓÃÜ
+	    // åŠ å¯†
 	    Encoder encoder = Base64.getEncoder();
 	    return encoder.encodeToString(data);
 	}

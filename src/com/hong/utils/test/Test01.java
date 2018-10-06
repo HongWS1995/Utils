@@ -8,19 +8,19 @@ public class Test01 {
     public static void main(String[] args) {  
         double d = 756.2345566;  
   
-        //·½·¨Ò»£º×î¼ò±ãµÄ·½·¨£¬µ÷ÓÃDecimalFormatÀà  
+        //æ–¹æ³•ä¸€ï¼šæœ€ç®€ä¾¿çš„æ–¹æ³•ï¼Œè°ƒç”¨DecimalFormatç±»  
         DecimalFormat df = new DecimalFormat(".00");  
         System.out.println(df.format(d));  
   
-        //·½·¨¶þ£ºÖ±½ÓÍ¨¹ýStringÀàµÄformatº¯ÊýÊµÏÖ  
+        //æ–¹æ³•äºŒï¼šç›´æŽ¥é€šè¿‡Stringç±»çš„formatå‡½æ•°å®žçŽ°  
         System.out.println(String.format("%.2f", d));  
   
-        //·½·¨Èý£ºÍ¨¹ýBigDecimalÀàÊµÏÖ  
+        //æ–¹æ³•ä¸‰ï¼šé€šè¿‡BigDecimalç±»å®žçŽ°  
         BigDecimal bg = new BigDecimal(d);  
         double d3 = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();  
         System.out.println(d3);  
   
-        //·½·¨ËÄ£ºÍ¨¹ýNumberFormatÀàÊµÏÖ  
+        //æ–¹æ³•å››ï¼šé€šè¿‡NumberFormatç±»å®žçŽ°  
         NumberFormat nf = NumberFormat.getNumberInstance();  
         nf.setMaximumFractionDigits(2);  
         System.out.println(nf.format(d));  

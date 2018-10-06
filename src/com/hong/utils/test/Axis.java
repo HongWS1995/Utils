@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 public class Axis extends JPanel
 {
 	Polygon po = new Polygon();
-	Font fn = new Font("ËÎÌו", Font.BOLD, 22);
-	Font fn2 = new Font("ËÎÌו", Font.BOLD, 20);
+	Font fn = new Font("SansSerif", Font.BOLD, 22);
+	Font fn2 = new Font("SansSerif", Font.BOLD, 20);
 	int x = 100;
 	int y = 100;
 	int[] pox ={ 90, 100, 100 };

@@ -28,15 +28,15 @@ public class GenerateQRCode {
 			String content, Map<EncodeHintType, ?> hints) {
 
 		BitMatrix bitMatrix;
-		System.out.println("Éú³É¶şÎ¬Âë¿ªÊ¼...");
+		System.out.println("ç”ŸæˆäºŒç»´ç å¼€å§‹...");
 		try {
 			
 			bitMatrix = new MultiFormatWriter().encode(content,
 					BarcodeFormat.QR_CODE, width, height, hints);
-			Path file = new File("C:\\Users\\3hhws\\Desktop\\code.png")
+			Path file = new File("E:\\code.png")
 					.toPath();
 			MatrixToImageWriter.writeToPath(bitMatrix, format, file);
-			System.out.println("Éú³É¶şÎ¬Âë³É¹¦¡£");
+			System.out.println("ç”ŸæˆäºŒç»´ç æˆåŠŸã€‚");
 		} catch (WriterException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -45,33 +45,33 @@ public class GenerateQRCode {
 	}
 
 	public static void main(String[] args) {
-		int width = 120; // Í¼Æ¬µÄ¿í¶È
-		int height = 120; // Í¼Æ¬µÄ¸ß¶È
-		String format = "png"; // Í¼Æ¬µÄ¸ñÊ½
-		String content = "18814383273"; // ÄÚÈİ
+		int width = 120; // å›¾ç‰‡çš„å®½åº¦
+		int height = 120; // å›¾ç‰‡çš„é«˜åº¦
+		String format = "png"; // å›¾ç‰‡çš„æ ¼å¼
+		String content = "18814383273"; // å†…å®¹
 
 		/**
-		 * ¶¨Òå¶şÎ¬ÂëµÄ²ÎÊı
+		 * å®šä¹‰äºŒç»´ç çš„å‚æ•°
 		 */
 		HashMap<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
-		hints.put(EncodeHintType.CHARACTER_SET, "utf-8"); // Ö¸¶¨×Ö·û±àÂëÎª¡°utf-8¡±
-		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H); // Ö¸¶¨¶şÎ¬ÂëµÄ¾À´íµÈ¼¶ÎªÖĞ¼¶
-		hints.put(EncodeHintType.MARGIN, 1); // ÉèÖÃÍ¼Æ¬µÄ±ß¾à
+		hints.put(EncodeHintType.CHARACTER_SET, "utf-8"); // æŒ‡å®šå­—ç¬¦ç¼–ç ä¸ºâ€œutf-8â€
+		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H); // æŒ‡å®šäºŒç»´ç çš„çº é”™ç­‰çº§ä¸ºä¸­çº§
+		hints.put(EncodeHintType.MARGIN, 1); // è®¾ç½®å›¾ç‰‡çš„è¾¹è·
 		GenerateQRCode.encodeQRCode(width, height, format, content, hints);
 		
 		
 		MultiFormatReader formatReader=new MultiFormatReader();
-	    File file=new File("C:\\Users\\3hhws\\Desktop\\code.png");
+	    File file=new File("E:\\\\code.png");
 	    BufferedImage image;
 	    try {
 	            image = ImageIO.read(file);
 	            BinaryBitmap binaryBitmap=new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(image)));
 	            HashMap<EncodeHintType, Object> hints1=new HashMap();
-	            hints1.put(EncodeHintType.CHARACTER_SET,"utf-8");    //Ö¸¶¨×Ö·û±àÂëÎª¡°utf-8¡±
+	            hints1.put(EncodeHintType.CHARACTER_SET,"utf-8");    //æŒ‡å®šå­—ç¬¦ç¼–ç ä¸ºâ€œutf-8â€
 	            Result result=formatReader.decode(binaryBitmap);
-	            System.out.println("½âÎö½á¹û£º"+result.toString());
-	            System.out.println("¶şÎ¬Âë¸ñÊ½£º"+result.getBarcodeFormat());
-	            System.out.println("¶şÎ¬ÂëÎÄ±¾ÄÚÈİ£º"+result.getText());
+	            System.out.println("è§£æç»“æœï¼š"+result.toString());
+	            System.out.println("äºŒç»´ç æ ¼å¼ï¼š"+result.getBarcodeFormat());
+	            System.out.println("äºŒç»´ç æ–‡æœ¬å†…å®¹ï¼š"+result.getText());
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
